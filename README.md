@@ -8,7 +8,7 @@ NakshatraVed is a free, open-source Vedic astrology birth chart calculator. Ente
 
 ## Live Demo
 
-🔗 **[Coming soon — add your deployed URL here]**
+🔗 **https://nakshatraved.onrender.com**
 
 ---
 
@@ -16,9 +16,7 @@ NakshatraVed is a free, open-source Vedic astrology birth chart calculator. Ente
 
 | Home Page | Birth Form | Dashboard |
 |-----------|------------|-----------|
-| ![Home](docs/screenshots/home.png) | ![Form](docs/screenshots/form.png) | ![Dashboard](docs/screenshots/dashboard.png) |
-
-> _Replace the placeholders above with actual screenshots after deployment._
+| <img width="1912" height="876" alt="image" src="https://github.com/user-attachments/assets/1f2fc54c-b7ca-4828-b4d5-591d3933b52a" /> | <img width="1901" height="876" alt="image" src="https://github.com/user-attachments/assets/fb4782b8-e8f4-4dac-9da6-e10f83d4e75d" /> | <img width="1889" height="869" alt="image" src="https://github.com/user-attachments/assets/ffa082fd-62c5-463d-a829-0dc4f5d1dc40" /> |
 
 ---
 
@@ -102,7 +100,7 @@ NakshatraVed/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/NakshatraVed.git
+git clone https://github.com/gauravbondegit/NakshatraVed.git
 cd NakshatraVed
 ```
 
