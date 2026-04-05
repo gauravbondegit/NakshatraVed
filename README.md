@@ -152,9 +152,10 @@ The FastAPI server will serve the built React frontend at `/`.
 
 ---
 
-## Contributing
+## Note 
+Unlike many astrology platforms, NakshatraVed is built on the principle of total privacy. We don't store your birth data, we don't use tracking cookies, and we don't sell your insights. It’s just pure, open-source mathematics applied to the heavens. Compute your destiny with peace of mind.
 
-Pull requests are welcome. For major changes, open an issue first to discuss what you'd like to change.
+This project utilizes the Swiss Ephemeris, the gold standard for high-precision astronomical calculations used by professional astrologers worldwide. By combining the Lahiri Ayanamsa with modern FastAPI and React architecture, NakshatraVed delivers professional-grade Vedic charts directly to your browser with zero overhead.
 
 ---
 
