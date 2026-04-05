@@ -1,0 +1,134 @@
+.dasha-timeline-scroll {
+  overflow-x: auto;
+  margin-bottom: 32px;
+  padding-bottom: 8px;
+}
+
+.dasha-timeline {
+  display: flex;
+  position: relative;
+  min-width: 600px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.dasha-seg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 4px 2px;
+  border-right: 1px solid rgba(200, 135, 62, 0.1);
+  transition: var(--transition);
+  cursor: default;
+  min-width: 40px;
+}
+.dasha-seg:hover {
+  filter: brightness(1.1);
+}
+.dasha-seg.current {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.ds-lord {
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ds-dates {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+.dasha-now-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #D32F2F;
+  z-index: 5;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.4);
+}
+
+/* Dasha Tree */
+.dasha-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dasha-maha-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: rgba(200, 135, 62, 0.04);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.dasha-maha-head:hover {
+  background: rgba(200, 135, 62, 0.08);
+}
+.dasha-maha-head.is-current {
+  border-color: rgba(200, 135, 62, 0.4);
+  background: rgba(200, 135, 62, 0.08);
+}
+
+.md-lord {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.md-dates {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.md-arrow {
+  font-size: 10px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease;
+}
+.md-arrow.open {
+  transform: rotate(90deg);
+}
+
+.dasha-maha-body {
+  padding: 8px 0 8px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dasha-antar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.dasha-antar:hover {
+  background: rgba(200, 135, 62, 0.05);
+}
+.dasha-antar.is-current {
+  background: rgba(200, 135, 62, 0.08);
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+.ad-dates {
+  font-size: 11px;
+  opacity: 0.7;
+}

@@ -1,0 +1,107 @@
+HOW TO HOST NAKSHATRAVD FOR FREE
+=================================
+
+This app has two parts: a Python/FastAPI backend and a React frontend.
+The simplest free setup is to host the backend on Render and serve the
+built frontend through it. Follow these steps exactly.
+
+-----------------------------------------------------------------
+STEP 1 — Push your code to GitHub
+-----------------------------------------------------------------
+1. Go to https://github.com and create a new repository (e.g. NakshatraVed).
+2. In your project folder, run:
+
+   git init
+   git add .
+   git commit -m "initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/NakshatraVed.git
+   git push -u origin main
+
+-----------------------------------------------------------------
+STEP 2 — Deploy the backend on Render (free tier)
+-----------------------------------------------------------------
+Render runs your FastAPI server and builds + serves the React app from it.
+
+1. Go to https://render.com and sign up (free).
+2. Click "New +" → "Web Service".
+3. Connect your GitHub account and select the NakshatraVed repo.
+4. Fill in the settings:
+
+   Name:           NakshatraVed (or any name)
+   Region:         Closest to you
+   Branch:         main
+   Root Directory: (leave blank)
+   Runtime:        Python 3
+   Build Command:  cd frontend-react && npm install && npm run build && cd .. && pip install -r backend/requirements.txt
+   Start Command:  uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+
+5. Under "Environment Variables", add if needed:
+   (none required by default — the app uses no external API keys)
+
+6. Click "Create Web Service".
+
+Render will build and deploy automatically. After a minute or two,
+you'll get a URL like: https://nakshatravd.onrender.com
+
+   NOTE: On Render's free tier the server spins down after 15 minutes
+   of inactivity and takes ~30 seconds to wake up on the next request.
+   This is normal behaviour on the free plan.
+
+-----------------------------------------------------------------
+STEP 3 — Verify it works
+-----------------------------------------------------------------
+Open your Render URL in a browser. You should see the NakshatraVed
+home page. Test the Kundali form end-to-end to confirm the backend
+and frontend are communicating correctly.
+
+-----------------------------------------------------------------
+STEP 4 (optional) — Add a custom domain
+-----------------------------------------------------------------
+Render lets you attach a free custom subdomain or your own domain:
+
+1. In your Render dashboard → Settings → Custom Domains.
+2. Add your domain and follow the DNS instructions.
+
+If you don't have a domain, your free render URL works just fine.
+
+-----------------------------------------------------------------
+STEP 5 (optional) — Keep the free server alive
+-----------------------------------------------------------------
+Because Render's free tier hibernates after inactivity, you can use
+a free uptime monitor to ping it every 10 minutes:
+
+1. Go to https://uptimerobot.com and create a free account.
+2. Add a new "HTTP(s)" monitor pointing to your Render URL.
+3. Set check interval to 10 minutes.
+
+This keeps the server warm so users don't experience the cold-start delay.
+
+-----------------------------------------------------------------
+ALTERNATIVE: Full static hosting (frontend only)
+-----------------------------------------------------------------
+If you want to host only the frontend (without backend features) on
+GitHub Pages or Vercel for zero cost and zero cold starts:
+
+  GitHub Pages:
+    1. Run: npm run build  (inside frontend-react/)
+    2. Push the dist/ folder to a gh-pages branch.
+    3. In repo Settings → Pages → set source to gh-pages / root.
+    4. Your site is live at https://YOUR_USERNAME.github.io/NakshatraVed
+
+  Vercel (recommended for React apps):
+    1. Go to https://vercel.com and import your GitHub repo.
+    2. Set Framework Preset to "Vite".
+    3. Set Root Directory to "frontend-react".
+    4. Deploy — done. Vercel handles builds automatically on every push.
+    5. You'll need a separately hosted backend for the API calls to work.
+
+-----------------------------------------------------------------
+SUMMARY
+-----------------------------------------------------------------
+Recommended free stack:
+  Backend  → Render (free tier, Python web service)
+  Frontend → served by the same FastAPI app (via frontend-react/dist)
+  Domain   → free *.onrender.com subdomain
+
+That's it. No credit card required.

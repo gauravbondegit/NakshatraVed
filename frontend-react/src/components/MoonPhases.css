@@ -1,0 +1,45 @@
+.moon-phases {
+  padding: 24px 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.moon-phases-track {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.moon-phase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+.moon-phase-item:hover {
+  transform: translateY(-4px);
+}
+
+.moon-phase-name {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 80px;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 768px) {
+  .moon-phases-track {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moon-phases-track {
+    gap: 12px;
+  }
+  .moon-phase-name {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,64 @@
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.chart-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.chart-pill {
+  display: inline-block;
+  padding: 2px 10px;
+  background: rgba(200, 135, 62, 0.1);
+  border: 1px solid rgba(200, 135, 62, 0.25);
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.chart-tab {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  background: rgba(200, 135, 62, 0.06);
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.chart-tab:hover {
+  background: rgba(200, 135, 62, 0.12);
+}
+.chart-tab.active {
+  background: rgba(200, 135, 62, 0.12);
+  border-color: rgba(200, 135, 62, 0.3);
+  color: var(--accent-gold);
+}
+
+.chart-label-text {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,42 @@
+.zodiac-wheel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+}
+
+.zodiac-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 135, 62, 0.08) 0%,
+    rgba(200, 135, 62, 0.03) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.zodiac-wheel {
+  width: 100%;
+  height: auto;
+  animation: spin 120s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .zodiac-wheel-wrapper {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .zodiac-wheel-wrapper {
+    max-width: 300px;
+  }
+}

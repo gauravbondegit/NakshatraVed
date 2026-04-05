@@ -1,0 +1,102 @@
+.planet-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.planet-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.planet-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--pc);
+  opacity: 0.7;
+}
+.planet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--pc);
+}
+
+.pc-symbol {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 8px;
+  color: var(--pc);
+}
+
+.pc-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.pc-rashi {
+  font-size: 13px;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.pc-details {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pc-dignity {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 8px;
+  background: rgba(200, 135, 62, 0.08);
+  border: 1px solid rgba(200, 135, 62, 0.2);
+  color: var(--text-body);
+}
+
+.pc-retro {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: #D32F2F;
+  font-weight: 500;
+}
+
+.retro-badge {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background: rgba(211, 47, 47, 0.1);
+  color: #D32F2F;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .planet-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .planet-card {
+    padding: 16px 12px;
+  }
+}
